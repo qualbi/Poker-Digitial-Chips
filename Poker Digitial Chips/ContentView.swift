@@ -9,8 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var pot:Int = 0
+    var potAmount:Int = 0
     var points:Int = 500
+    var pot:String = "pot 4"
     
     var body: some View {
         ZStack {
@@ -20,15 +21,15 @@ struct ContentView: View {
             VStack{
                 Image("Title")
                     .resizable()
-                    .frame(width:225, height: 195)
+                    .frame(width:200, height: 195)
                 
                 Spacer()
                 
-                Image("pot 4")
+                Image(pot)
                     .resizable()
                     .frame(width: 200, height: 200)
                 
-                Text("Total Pot: $\(pot)")
+                Text("Total Pot: $\(potAmount)")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(Color.white)
