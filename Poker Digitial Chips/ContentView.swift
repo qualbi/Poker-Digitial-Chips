@@ -15,14 +15,16 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Image("Poker Background")
-                .resizable()
-                .ignoresSafeArea()
-            VStack{
-                Image("Title")
+                Image("Poker Background")
                     .resizable()
-                    .frame(width:200, height: 195)
-                
+                    .ignoresSafeArea()
+            VStack{
+                HStack{
+                    Image("Title")
+                        .resizable()
+                        .frame(width:140, height: 140)
+                    Spacer()
+                }
                 Spacer()
                 
                 Image(pot)
@@ -87,6 +89,10 @@ struct ContentView: View {
                 }
 
             }
+    //Takes away $ from hand and adds to the pot
+    func deal() {
+        
+    }
         }
 
 
