@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var potAmount:Int = 0
-    var points:Int = 500
-    var pot:String = "pot 4"
+    @State var potAmount:Int = 0
+    @State var points:Int = 500
+    @State var pot:String = "pot 0"
     
     var body: some View {
         ZStack {
@@ -90,8 +90,19 @@ struct ContentView: View {
 
             }
     //Takes away $ from hand and adds to the pot
-    func deal() {
-        
+    func potChecker() {
+        if potAmount > 1000 {
+            pot = "pot 4"
+        }
+        else if potAmount > 500{
+            pot = "pot 3"
+        }
+        else if potAmount > 250{
+            pot = "pot 2"
+        }
+        else if potAmount > 0{
+            pot = "pot 1"
+        }
     }
         }
 
