@@ -20,9 +20,13 @@ struct ContentView: View {
                     .ignoresSafeArea()
             VStack{
                 HStack{
-                    Image("Title")
+                    Button{
+                        
+                    }
+                label: {Image("Title")
                         .resizable()
-                        .frame(width:140, height: 140)
+                        .frame(width:120, height: 120)
+                }
                     Spacer()
                 }
                 Spacer()
