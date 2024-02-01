@@ -108,6 +108,23 @@ struct ContentView: View {
             pot = "pot 1"
         }
     }
+    
+    func possibleHand(gamble: Int) -> Int {
+        if points > 0
+        {
+            
+        }
+        return points
+    }
+    
+    func possible(test: Int) -> Int{
+        if points > 0
+        {
+            
+        }
+        return points
+    }
+    
         }
 
 
