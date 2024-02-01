@@ -12,6 +12,7 @@ struct ContentView: View {
     @State var potAmount:Int = 0
     @State var points:Int = 500
     @State var pot:String = "pot 0"
+    @State var warning:Bool = false
     
     var body: some View {
         ZStack {
@@ -49,7 +50,8 @@ struct ContentView: View {
                 
                 HStack{
                     Button{
-                        
+                        possibleHand(gamble: points, taken: 1)
+                        print("White Chip")
                     }
                 label: {Image("White Chip")
                         .resizable()
@@ -57,14 +59,16 @@ struct ContentView: View {
                     
                 }
                     Button{
-                        
+                        possibleHand(gamble: points, taken: 10)
+                        print("Red Chip")
                     }
                 label: {Image("Red Chip")
                         .resizable()
                         .frame(width: 96, height: 96)
                 }
                     Button{
-                        
+                        possibleHand(gamble: points, taken: 25)
+                        print("Blue Chip")
                     }
                 label: {Image("Blue Chip")
                         .resizable()
@@ -73,7 +77,8 @@ struct ContentView: View {
                 }
                 HStack{
                     Button{
-                        
+                        possibleHand(gamble: points, taken: 50)
+                        print("Green Chip")
                     }
                 label: {Image("Green Chip")
                         .resizable()
@@ -81,7 +86,8 @@ struct ContentView: View {
                     
                 }
                     Button{
-                        
+                        possibleHand(gamble: points, taken: 100)
+                        print("Black Chip")
                     }
                 label: {Image("Black Chip")
                         .resizable()
@@ -109,21 +115,24 @@ struct ContentView: View {
         }
     }
     
-    func possibleHand(gamble: Int) -> Int {
-        if points > 0
+    func possibleHand(gamble: Int, taken: Int) {
+    var test: Int
+        test = gamble - taken
+        if test >= 0
         {
-            
+            points = gamble - taken
+            potAmount += taken
+            potChecker()
         }
-        return points
-    }
-    
-    func possible(test: Int) -> Int{
-        if points > 0
+        else if test < 0
         {
-            
+                Alert(title: Text("Warning"),
+                    message: Text("You cannot gamble monkey that you do not have!"),
+                    dismissButton: .default(Text("Ok"))
+                )
         }
-        return points
     }
+
     
         }
 
@@ -131,5 +140,11 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct Previews_ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }
