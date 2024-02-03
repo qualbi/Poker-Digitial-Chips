@@ -12,7 +12,7 @@ struct ContentView: View {
     @State var potAmount:Int = 0
     @State var points:Int = 500
     @State var pot:String = "pot 0"
-    @State var warning:Bool = false
+    @State var reset:Bool = false
     
     var body: some View {
         ZStack {
@@ -22,11 +22,18 @@ struct ContentView: View {
             VStack{
                 HStack{
                     Button{
-                        
+                        reset = true
                     }
                 label: {Image("Title")
                         .resizable()
                         .frame(width:120, height: 120)
+                        .alert(isPresented: $reset) {
+                            Alert(title: Text("Do you want to reset the game?"), primaryButton: .default(Text ("Reset")){
+                                potAmount = 0
+                                points = 500
+                                potChecker()
+                            }, secondaryButton: .cancel())
+                        }
                 }
                     Spacer()
                 }
@@ -113,6 +120,9 @@ struct ContentView: View {
         else if potAmount > 0{
             pot = "pot 1"
         }
+        else if potAmount == 0{
+            pot = "pot 0"
+        }
     }
     
     func possibleHand(gamble: Int, taken: Int) {
@@ -123,13 +133,6 @@ struct ContentView: View {
             points = gamble - taken
             potAmount += taken
             potChecker()
-        }
-        else if test < 0
-        {
-                Alert(title: Text("Warning"),
-                    message: Text("You cannot gamble monkey that you do not have!"),
-                    dismissButton: .default(Text("Ok"))
-                )
         }
     }
 
