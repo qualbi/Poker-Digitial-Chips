@@ -11,6 +11,7 @@
 		4D8D835A2B64B76D0080E9AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D83592B64B76D0080E9AF /* ContentView.swift */; };
 		4D8D835C2B64B76E0080E9AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D835B2B64B76E0080E9AF /* Assets.xcassets */; };
 		4D8D835F2B64B76E0080E9AF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D835E2B64B76E0080E9AF /* Preview Assets.xcassets */; };
+		4DB8FB352B70984E00F1F223 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8FB342B70984E00F1F223 /* StartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		4D8D83592B64B76D0080E9AF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4D8D835B2B64B76E0080E9AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D8D835E2B64B76E0080E9AF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4DB8FB342B70984E00F1F223 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				4D8D83652B64E3FA0080E9AF /* Poker Assets */,
 				4D8D83572B64B76D0080E9AF /* Poker_Digitial_ChipsApp.swift */,
+				4DB8FB342B70984E00F1F223 /* StartView.swift */,
 				4D8D83592B64B76D0080E9AF /* ContentView.swift */,
 				4D8D835B2B64B76E0080E9AF /* Assets.xcassets */,
 				4D8D835D2B64B76E0080E9AF /* Preview Content */,
@@ -145,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DB8FB352B70984E00F1F223 /* StartView.swift in Sources */,
 				4D8D835A2B64B76D0080E9AF /* ContentView.swift in Sources */,
 				4D8D83582B64B76D0080E9AF /* Poker_Digitial_ChipsApp.swift in Sources */,
 			);

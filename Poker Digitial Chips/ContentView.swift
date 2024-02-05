@@ -32,6 +32,7 @@ struct ContentView: View {
                                 potAmount = 0
                                 points = 500
                                 potChecker()
+                                print("Game Reset")
                             }, secondaryButton: .cancel())
                         }
                 }
@@ -108,7 +109,7 @@ struct ContentView: View {
             }
     //Takes away $ from hand and adds to the pot
     func potChecker() {
-        if potAmount > 1000 {
+        if potAmount >= 1000 {
             pot = "pot 4"
         }
         else if potAmount > 500{
