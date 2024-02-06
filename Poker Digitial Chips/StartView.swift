@@ -14,6 +14,7 @@ struct StartView: View {
                 .resizable()
                 .ignoresSafeArea()
             VStack{
+                Spacer()
                 Image("Title")
                     .resizable()
                     .frame(width: 230, height: 285)
@@ -25,7 +26,15 @@ struct StartView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(Color.white)
+                Spacer()
+                Button {
                     
+                }
+            label: {Text("Play")
+                    .font(.title)
+                
+            }
+                    Spacer()
             }
         }
     }
