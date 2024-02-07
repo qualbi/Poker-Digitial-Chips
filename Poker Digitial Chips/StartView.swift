@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct StartView: View {
+    @State private var gameType: GameType = .undetermined
     var body: some View {
         ZStack{
             Image("Poker Background")
@@ -26,6 +27,15 @@ struct StartView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(Color.white)
+                Spacer()
+                Picker("Select Game", selection: $gameType) {
+                    Text("Select Game Type").tag(GameType.undetermined)
+                    Text("Alone").tag(GameType.single)
+                    Text("With Friends").tag(GameType.peer)
+                }
+                .padding()
+                .background(RoundedRectangle(cornerRadius: 10, style: .continuous).stroke(lineWidth: 5).foregroundColor(.white))
+                .accentColor(.white)
                 Spacer()
                 Button {
                     
