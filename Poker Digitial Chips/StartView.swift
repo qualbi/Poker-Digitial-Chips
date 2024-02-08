@@ -9,6 +9,8 @@ import SwiftUI
 
 struct StartView: View {
     @State private var gameType: GameType = .undetermined
+    @State private var yourName = ""
+    @FocusState private var focus: Bool
     var body: some View {
         ZStack{
             Image("Poker Background")
@@ -36,7 +38,21 @@ struct StartView: View {
                 .padding()
                 .background(RoundedRectangle(cornerRadius: 10, style: .continuous).stroke(lineWidth: 5).foregroundColor(.white))
                 .accentColor(.white)
-                Spacer()
+                Text(gameType.description)
+                    .foregroundColor(.white)
+                    .padding()
+                VStack{
+                    switch gameType {
+                    case .single:
+                        VStack{
+                            TextField("Your Name", text: $yourName)
+                        }
+                    case .peer:
+                        TextField("Your Name", text: $yourName)
+                    case .undetermined:
+                        EmptyView()
+                    }
+                }
                 Button {
                     
                 }
@@ -44,7 +60,7 @@ struct StartView: View {
                     .font(.title)
                 
             }
-                    Spacer()
+                Spacer()
             }
         }
     }
