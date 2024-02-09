@@ -21,15 +21,12 @@ struct StartView: View {
                 Image("Title")
                     .resizable()
                     .frame(width: 230, height: 285)
-                Text("Welcome to Digital")
+                Text("Digital Poker Chips")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(Color.white)
-                Text("Poker Chips")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.white)
-                Spacer()
+                    .padding()
+
                 Picker("Select Game", selection: $gameType) {
                     Text("Select Game Type").tag(GameType.undetermined)
                     Text("Alone").tag(GameType.single)
@@ -53,11 +50,20 @@ struct StartView: View {
                         EmptyView()
                     }
                 }
-                Button {
-                    
-                }
-            label: {Text("Play")
-                    .font(.title)
+                .padding()
+                .textFieldStyle(.roundedBorder)
+                .focused($focus)
+                .frame(width:350)
+                
+                if gameType != .peer{
+                    Button ("Play") {
+                        focus = false
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .disabled(
+                        gameType == .undetermined ||
+                        gameType == .single && yourName.isEmpty
+                        )
                 
             }
                 Spacer()
