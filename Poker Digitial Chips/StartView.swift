@@ -68,7 +68,9 @@ struct StartView: View {
             }
                 Spacer()
             }
+            .padding()
         }
+        .inNavigationStack()
     }
 }
 

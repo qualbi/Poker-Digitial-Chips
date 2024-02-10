@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		4D7D658A2B731DF4009EBA28 /* GameModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7D65892B731DF4009EBA28 /* GameModels.swift */; };
+		4D7D658E2B75EADA009EBA28 /* Preview Content in Resources */ = {isa = PBXBuildFile; fileRef = 4D7D658D2B75EADA009EBA28 /* Preview Content */; };
+		4D7D65922B773113009EBA28 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7D65912B773106009EBA28 /* ContentView.swift */; };
+		4D7D65942B773146009EBA28 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7D65932B773146009EBA28 /* ViewModifiers.swift */; };
 		4D8D83582B64B76D0080E9AF /* Poker_Digitial_ChipsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D83572B64B76D0080E9AF /* Poker_Digitial_ChipsApp.swift */; };
-		4D8D835A2B64B76D0080E9AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D83592B64B76D0080E9AF /* ContentView.swift */; };
 		4D8D835C2B64B76E0080E9AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D835B2B64B76E0080E9AF /* Assets.xcassets */; };
-		4D8D835F2B64B76E0080E9AF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D835E2B64B76E0080E9AF /* Preview Assets.xcassets */; };
 		4DB8FB352B70984E00F1F223 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8FB342B70984E00F1F223 /* StartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4D7D65892B731DF4009EBA28 /* GameModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModels.swift; sourceTree = "<group>"; };
+		4D7D658D2B75EADA009EBA28 /* Preview Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Preview Content"; sourceTree = "<group>"; };
+		4D7D65912B773106009EBA28 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4D7D65932B773146009EBA28 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		4D8D83542B64B76D0080E9AF /* Poker Digitial Chips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Poker Digitial Chips.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D8D83572B64B76D0080E9AF /* Poker_Digitial_ChipsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poker_Digitial_ChipsApp.swift; sourceTree = "<group>"; };
-		4D8D83592B64B76D0080E9AF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4D8D835B2B64B76E0080E9AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4D8D835E2B64B76E0080E9AF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4DB8FB342B70984E00F1F223 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -40,8 +42,17 @@
 			isa = PBXGroup;
 			children = (
 				4D7D65892B731DF4009EBA28 /* GameModels.swift */,
+				4D7D65902B773106009EBA28 /* Utilities */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4D7D65902B773106009EBA28 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4D7D65932B773146009EBA28 /* ViewModifiers.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		4D8D834B2B64B76D0080E9AF = {
@@ -66,20 +77,12 @@
 				4D8D83652B64E3FA0080E9AF /* Poker Assets */,
 				4D8D83572B64B76D0080E9AF /* Poker_Digitial_ChipsApp.swift */,
 				4DB8FB342B70984E00F1F223 /* StartView.swift */,
-				4D8D83592B64B76D0080E9AF /* ContentView.swift */,
+				4D7D65912B773106009EBA28 /* ContentView.swift */,
 				4D7D65882B731DCE009EBA28 /* Model */,
 				4D8D835B2B64B76E0080E9AF /* Assets.xcassets */,
-				4D8D835D2B64B76E0080E9AF /* Preview Content */,
+				4D7D658D2B75EADA009EBA28 /* Preview Content */,
 			);
 			path = "Poker Digitial Chips";
-			sourceTree = "<group>";
-		};
-		4D8D835D2B64B76E0080E9AF /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				4D8D835E2B64B76E0080E9AF /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		4D8D83652B64E3FA0080E9AF /* Poker Assets */ = {
@@ -147,7 +150,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D8D835F2B64B76E0080E9AF /* Preview Assets.xcassets in Resources */,
+				4D7D658E2B75EADA009EBA28 /* Preview Content in Resources */,
 				4D8D835C2B64B76E0080E9AF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,9 +162,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D7D65942B773146009EBA28 /* ViewModifiers.swift in Sources */,
 				4DB8FB352B70984E00F1F223 /* StartView.swift in Sources */,
 				4D7D658A2B731DF4009EBA28 /* GameModels.swift in Sources */,
-				4D8D835A2B64B76D0080E9AF /* ContentView.swift in Sources */,
+				4D7D65922B773113009EBA28 /* ContentView.swift in Sources */,
 				4D8D83582B64B76D0080E9AF /* Poker_Digitial_ChipsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
