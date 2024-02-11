@@ -11,6 +11,7 @@ struct StartView: View {
     @State private var gameType: GameType = .undetermined
     @State private var yourName = ""
     @FocusState private var focus: Bool
+    @State private var startGame = false
     var body: some View {
         ZStack{
             Image("Poker Background")
@@ -58,18 +59,21 @@ struct StartView: View {
                 if gameType != .peer{
                     Button ("Play") {
                         focus = false
+                        startGame.toggle()
                     }
                     .buttonStyle(.borderedProminent)
                     .disabled(
                         gameType == .undetermined ||
                         gameType == .single && yourName.isEmpty
                         )
-                
             }
                 Spacer()
             }
             .padding()
         }
+        .fullScreenCover(isPresented: $startGame, content: {ContentView()
+            
+        })
         .inNavigationStack()
     }
 }
