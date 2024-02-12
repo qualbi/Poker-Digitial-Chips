@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Descriptions for each gamemode
 enum GameType {
     case single, peer, undetermined
     

@@ -22,6 +22,7 @@ struct ContentView: View {
                     .ignoresSafeArea()
             VStack{
                 HStack{
+                    //Reser Button
                     Button{
                         reset = true
                     }
@@ -46,6 +47,7 @@ struct ContentView: View {
                     .resizable()
                     .frame(width: 200, height: 200)
                 
+                //Displays Player's Cash
                 Text("Total Pot: $\(potAmount)")
                     .font(.largeTitle)
                     .fontWeight(.bold)
@@ -59,6 +61,7 @@ struct ContentView: View {
                     .foregroundColor(Color.white)
                 
                 HStack{
+                    //White Chips
                     Button{
                         possibleHand(gamble: points, taken: 1)
                         print("White Chip")
@@ -68,6 +71,7 @@ struct ContentView: View {
                         .frame(width: 96, height: 96)
                     
                 }
+                    //Red Chips
                     Button{
                         possibleHand(gamble: points, taken: 10)
                         print("Red Chip")
@@ -76,6 +80,7 @@ struct ContentView: View {
                         .resizable()
                         .frame(width: 96, height: 96)
                 }
+                    //Blue Chips
                     Button{
                         possibleHand(gamble: points, taken: 25)
                         print("Blue Chip")
@@ -86,6 +91,7 @@ struct ContentView: View {
                 }
                 }
                 HStack{
+                    //Green Chips
                     Button{
                         possibleHand(gamble: points, taken: 50)
                         print("Green Chip")
@@ -95,6 +101,7 @@ struct ContentView: View {
                         .frame(width: 96, height: 96)
                     
                 }
+                    //Black Chips
                     Button{
                         possibleHand(gamble: points, taken: 100)
                         print("Black Chip")
@@ -109,7 +116,7 @@ struct ContentView: View {
                 }
 
             }
-    //Takes away $ from hand and adds to the pot
+    //Changes display on the pot based on its amount
     func potChecker() {
         if potAmount >= 1000 {
             pot = "pot 4"
@@ -128,6 +135,7 @@ struct ContentView: View {
         }
     }
     
+    //Removes cash from player's hand and add to pot
     func possibleHand(gamble: Int, taken: Int) {
     var test: Int
         test = gamble - taken

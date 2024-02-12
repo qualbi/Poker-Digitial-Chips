@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//Checks to see if iOS is correct for display
 struct NavStackContainer: ViewModifier{
     func body(content: Content) -> some View {
         if #available(iOS 16, *){

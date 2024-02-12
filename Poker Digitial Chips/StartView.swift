@@ -14,6 +14,7 @@ struct StartView: View {
     @State private var startGame = false
     var body: some View {
         ZStack{
+            //Logo and App Title
             Image("Poker Background")
                 .resizable()
                 .ignoresSafeArea()
@@ -28,6 +29,7 @@ struct StartView: View {
                     .foregroundColor(Color.white)
                     .padding()
 
+                //Gamemode selector
                 Picker("Select Game", selection: $gameType) {
                     Text("Select Game Type").tag(GameType.undetermined)
                     Text("Alone").tag(GameType.single)
