@@ -13,6 +13,7 @@ struct ContentView: View {
     @State var points:Int = 500
     @State var pot:String = "pot 0"
     @State var reset:Bool = false
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         ZStack {
@@ -32,6 +33,7 @@ struct ContentView: View {
                                 potAmount = 0
                                 points = 500
                                 potChecker()
+                                dismiss()
                                 print("Game Reset")
                             }, secondaryButton: .cancel())
                         }
