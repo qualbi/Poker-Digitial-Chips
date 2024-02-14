@@ -11,16 +11,18 @@ struct ContentView: View {
     
     @State var potAmount:Int = 0
     @State var points:Int = 500
+    @State var betAmount:Int = 0
     @State var pot:String = "pot 0"
     @State var reset:Bool = false
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
         ZStack {
-                Image("Poker Background")
-                    .resizable()
-                    .ignoresSafeArea()
+            Image("Poker Background")
+                .resizable()
+                .ignoresSafeArea()
             VStack{
+                
                 HStack{
                     //Reser Button
                     Button{
@@ -30,9 +32,10 @@ struct ContentView: View {
                         .resizable()
                         .frame(width:120, height: 120)
                         .alert(isPresented: $reset) {
-                            Alert(title: Text("Do you want to reset the game?"), primaryButton: .default(Text ("Reset")){
+                            Alert(title: Text("Do you want to leave the game?"), primaryButton: .default(Text ("Leave")){
                                 potAmount = 0
                                 points = 500
+                                betAmount = 0
                                 potChecker()
                                 dismiss()
                                 print("Game Reset")
@@ -40,20 +43,59 @@ struct ContentView: View {
                         }
                 }
                     Spacer()
+                    
                 }
-                Spacer()
-                
-                Image(pot)
-                    .resizable()
-                    .frame(width: 200, height: 200)
-                
-                //Displays Player's Cash
                 Text("Total Pot: $\(potAmount)")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(Color.white)
                 
+                //Pot Image
+                Image(pot)
+                    .resizable()
+                    .frame(width: 170, height: 170)
+                
+                
                 Spacer()
+                
+                HStack {
+                    Group{
+                        //Check Button
+                        Button{
+                            
+                        }
+                    label: {Image("Check")
+                            .resizable()
+                            .frame(width: 100, height: 50)
+                        
+                    }
+                        //Bet Button
+                        Button{
+                            betPot()
+                        }
+                    label: {Image("Bet")
+                            .resizable()
+                            .frame(width: 100, height: 50)
+                        
+                    }
+                        //Fold Button
+                        Button{
+                            
+                        }
+                    label: {Image("Fold")
+                            .resizable()
+                            .frame(width: 100, height: 50)
+                        
+                    }
+                    }
+                }
+                
+                Spacer()
+                
+                Text("Bet Amount: $\(betAmount)")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.white)
                 
                 Text("Cash: $\(points)")
                     .font(.title)
@@ -61,34 +103,36 @@ struct ContentView: View {
                     .foregroundColor(Color.white)
                 
                 HStack{
-                    //White Chips
-                    Button{
-                        possibleHand(gamble: points, taken: 1)
-                        print("White Chip")
+                    Group{
+                        //White Chips
+                        Button{
+                            possibleHand(gamble: points, taken: 1)
+                            print("White Chip")
+                        }
+                    label: {Image("White Chip")
+                            .resizable()
+                            .frame(width: 96, height: 96)
+                        
                     }
-                label: {Image("White Chip")
-                        .resizable()
-                        .frame(width: 96, height: 96)
-                    
-                }
-                    //Red Chips
-                    Button{
-                        possibleHand(gamble: points, taken: 10)
-                        print("Red Chip")
+                        //Red Chips
+                        Button{
+                            possibleHand(gamble: points, taken: 10)
+                            print("Red Chip")
+                        }
+                    label: {Image("Red Chip")
+                            .resizable()
+                            .frame(width: 96, height: 96)
                     }
-                label: {Image("Red Chip")
-                        .resizable()
-                        .frame(width: 96, height: 96)
-                }
-                    //Blue Chips
-                    Button{
-                        possibleHand(gamble: points, taken: 25)
-                        print("Blue Chip")
+                        //Blue Chips
+                        Button{
+                            possibleHand(gamble: points, taken: 25)
+                            print("Blue Chip")
+                        }
+                    label: {Image("Blue Chip")
+                            .resizable()
+                            .frame(width: 96, height: 96)
                     }
-                label: {Image("Blue Chip")
-                        .resizable()
-                        .frame(width: 96, height: 96)
-                }
+                    }
                 }
                 HStack{
                     //Green Chips
@@ -112,10 +156,11 @@ struct ContentView: View {
                     
                 }
                 }
+                
             }
-                }
-
-            }
+        }
+        
+    }
     //Changes display on the pot based on its amount
     func potChecker() {
         if potAmount >= 1000 {
@@ -137,18 +182,23 @@ struct ContentView: View {
     
     //Removes cash from player's hand and add to pot
     func possibleHand(gamble: Int, taken: Int) {
-    var test: Int
+        var test: Int
         test = gamble - taken
         if test >= 0
         {
             points = gamble - taken
-            potAmount += taken
+            betAmount += taken
             potChecker()
         }
     }
-
     
-        }
+    func betPot() {
+        potAmount += betAmount
+        betAmount = 0
+        potChecker()
+    }
+    
+}
 
 
 struct ContentView_Previews: PreviewProvider {
