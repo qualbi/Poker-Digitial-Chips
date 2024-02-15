@@ -59,7 +59,7 @@ struct ContentView: View {
                 Spacer()
                 
                 HStack {
-                    Group{
+
                         //Check Button
                         Button{
                             
@@ -86,7 +86,6 @@ struct ContentView: View {
                             .resizable()
                             .frame(width: 100, height: 50)
                         
-                    }
                     }
                 }
                 

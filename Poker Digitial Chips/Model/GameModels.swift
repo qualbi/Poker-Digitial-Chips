@@ -25,9 +25,8 @@ enum GameType {
 
 struct Player {
     var name: String
-    var moves: [Int] = []
     var money: Int = 500
+    var loser = false
     var isCurrent = false
-    
 }
 

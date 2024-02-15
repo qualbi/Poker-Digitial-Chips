@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D5686ED2B7DCFDF000CD258 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5686EC2B7DCFDF000CD258 /* GameService.swift */; };
 		4D7D658A2B731DF4009EBA28 /* GameModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7D65892B731DF4009EBA28 /* GameModels.swift */; };
 		4D7D658E2B75EADA009EBA28 /* Preview Content in Resources */ = {isa = PBXBuildFile; fileRef = 4D7D658D2B75EADA009EBA28 /* Preview Content */; };
 		4D7D65922B773113009EBA28 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7D65912B773106009EBA28 /* ContentView.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D5686EC2B7DCFDF000CD258 /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
 		4D7D65892B731DF4009EBA28 /* GameModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModels.swift; sourceTree = "<group>"; };
 		4D7D658D2B75EADA009EBA28 /* Preview Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Preview Content"; sourceTree = "<group>"; };
 		4D7D65912B773106009EBA28 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,6 +40,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D5686EB2B7DCF0B000CD258 /* Game Screen */ = {
+			isa = PBXGroup;
+			children = (
+				4D7D65912B773106009EBA28 /* ContentView.swift */,
+				4D5686EC2B7DCFDF000CD258 /* GameService.swift */,
+			);
+			path = "Game Screen";
+			sourceTree = "<group>";
+		};
 		4D7D65882B731DCE009EBA28 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,7 +87,7 @@
 				4D8D83652B64E3FA0080E9AF /* Poker Assets */,
 				4D8D83572B64B76D0080E9AF /* Poker_Digitial_ChipsApp.swift */,
 				4DB8FB342B70984E00F1F223 /* StartView.swift */,
-				4D7D65912B773106009EBA28 /* ContentView.swift */,
+				4D5686EB2B7DCF0B000CD258 /* Game Screen */,
 				4D7D65902B773106009EBA28 /* Utilities */,
 				4D7D65882B731DCE009EBA28 /* Model */,
 				4D8D835B2B64B76E0080E9AF /* Assets.xcassets */,
@@ -165,6 +176,7 @@
 				4D7D65942B773146009EBA28 /* ViewModifiers.swift in Sources */,
 				4DB8FB352B70984E00F1F223 /* StartView.swift in Sources */,
 				4D7D658A2B731DF4009EBA28 /* GameModels.swift in Sources */,
+				4D5686ED2B7DCFDF000CD258 /* GameService.swift in Sources */,
 				4D7D65922B773113009EBA28 /* ContentView.swift in Sources */,
 				4D8D83582B64B76D0080E9AF /* Poker_Digitial_ChipsApp.swift in Sources */,
 			);
