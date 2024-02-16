@@ -10,4 +10,6 @@ import Foundation
 class GameService: ObservableObject {
     @Published var inGame = false
     @Published var gameOver = false
+    @Published var players : [Int] = []
+    
 }

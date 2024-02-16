@@ -10,6 +10,7 @@ import SwiftUI
 struct StartView: View {
     @State private var gameType: GameType = .undetermined
     @State private var yourName = ""
+    @State private var playerCount = 0
     @FocusState private var focus: Bool
     @State private var startGame = false
     var body: some View {
