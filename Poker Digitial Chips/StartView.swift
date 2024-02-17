@@ -47,7 +47,7 @@ struct StartView: View {
                     case .single:
                         VStack{
                             TextField("Your Name", text: $yourName)
-                            TextField("Player Count", value: $playerCount, formatter: NumberFormatter())
+                            TextField("Player Count", value: $playerCount, format: .number)
                         }
                     case .peer:
                         TextField("Your Name", text: $yourName)
@@ -69,7 +69,7 @@ struct StartView: View {
                     .disabled(
                         gameType == .undetermined ||
                         gameType == .single && yourName.isEmpty ||
-                        playerCount == 0
+                        playerCount == 0 || playerCount == nil
                         )
             }
                 Spacer()
