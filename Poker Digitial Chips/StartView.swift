@@ -10,7 +10,7 @@ import SwiftUI
 struct StartView: View {
     @State private var gameType: GameType = .undetermined
     @State private var yourName = ""
-    @State private var playerCount = 0
+    @State private var playerCount: Int?
     @FocusState private var focus: Bool
     @State private var startGame = false
     var body: some View {
@@ -47,6 +47,7 @@ struct StartView: View {
                     case .single:
                         VStack{
                             TextField("Your Name", text: $yourName)
+                            TextField("Player Count", value: $playerCount, formatter: NumberFormatter())
                         }
                     case .peer:
                         TextField("Your Name", text: $yourName)
@@ -67,7 +68,8 @@ struct StartView: View {
                     .buttonStyle(.borderedProminent)
                     .disabled(
                         gameType == .undetermined ||
-                        gameType == .single && yourName.isEmpty
+                        gameType == .single && yourName.isEmpty ||
+                        playerCount == 0
                         )
             }
                 Spacer()
