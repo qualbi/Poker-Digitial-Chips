@@ -70,13 +70,17 @@ struct StartView: View {
                     .disabled(
                         gameType == .undetermined ||
                         gameType == .single && yourName.isEmpty ||
-                        playerCount == 0 || playerCount == nil || playerCount > 10                        )
+                        playerCount == 0 || playerCount == nil || playerCount > 10 || matchManager.authenicationState != .authenicated || matchManager.inGame
+                    )
+                    Text(matchManager.authenicationState.rawValue)
+                        .foregroundColor(.white)
+                        .padding()
             }
                 Spacer()
             }
             .padding()
         }
-        .fullScreenCover(isPresented: $startGame, content: {ContentView()
+        .fullScreenCover(isPresented: $startGame, content: {ContentView(matchManager: MatchManager())
             
         })
         .inNavigationStack()
@@ -85,6 +89,6 @@ struct StartView: View {
 
 struct StartView_Previews: PreviewProvider {
     static var previews: some View {
-        StartView()
+        StartView(matchManager: MatchManager())
     }
 }

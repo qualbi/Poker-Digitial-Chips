@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var potAmount:Int = 0
+    @ObservedObject var matchManager: MatchManager
     @State var points:Int = 500
     @State var betAmount:Int = 0
     @State var pot:String = "pot 0"
@@ -33,7 +33,7 @@ struct ContentView: View {
                         .frame(width:120, height: 120)
                         .alert(isPresented: $reset) {
                             Alert(title: Text("Do you want to leave the game?"), primaryButton: .default(Text ("Leave")){
-                                potAmount = 0
+                                matchManager.currentPot = 0
                                 points = 500
                                 betAmount = 0
                                 potChecker()
@@ -45,7 +45,7 @@ struct ContentView: View {
                     Spacer()
                     
                 }
-                Text("Total Pot: $\(potAmount)")
+                Text("Total Pot: $\(matchManager.currentPot)")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(Color.white)
@@ -162,19 +162,19 @@ struct ContentView: View {
     }
     //Changes display on the pot based on its amount
     func potChecker() {
-        if potAmount >= 1000 {
+        if matchManager.currentPot >= 1000 {
             pot = "pot 4"
         }
-        else if potAmount > 500{
+        else if matchManager.currentPot > 500{
             pot = "pot 3"
         }
-        else if potAmount > 250{
+        else if matchManager.currentPot > 250{
             pot = "pot 2"
         }
-        else if potAmount > 0{
+        else if matchManager.currentPot > 0{
             pot = "pot 1"
         }
-        else if potAmount == 0{
+        else if matchManager.currentPot == 0{
             pot = "pot 0"
         }
     }
@@ -192,7 +192,7 @@ struct ContentView: View {
     }
     
     func betPot() {
-        potAmount += betAmount
+        matchManager.currentPot += betAmount
         betAmount = 0
         potChecker()
     }
@@ -202,7 +202,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(matchManager: MatchManager())
     }
 }
 

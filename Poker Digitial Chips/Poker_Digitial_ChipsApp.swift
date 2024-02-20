@@ -11,8 +11,8 @@ import SwiftUI
 struct Poker_Digitial_ChipsApp: App {
     var body: some Scene {
         WindowGroup {
-            StartView()
-            ContentView()
+            StartView(matchManager: MatchManager())
+            ContentView(matchManager: MatchManager())
         }
     }
 }
