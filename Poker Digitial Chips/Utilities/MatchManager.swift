@@ -11,4 +11,9 @@ class MatchManager: ObservableObject {
     @Published var authenicationState = PlayerAuthState.authenticating
     @Published var inGame = false
     @Published var isGameOver = false
+    
+    @Published var currentlyBetting = false
+    @Published var players : [Int] = []
+    
+    @Published var currentPot = 0
 }
