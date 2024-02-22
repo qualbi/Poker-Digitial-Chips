@@ -16,4 +16,5 @@ class MatchManager: ObservableObject {
     @Published var players : [Int] = []
     
     @Published var currentPot = 0
+    @Published var pastBet = 0
 }

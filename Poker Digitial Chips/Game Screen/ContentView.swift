@@ -62,7 +62,7 @@ struct ContentView: View {
 
                         //Check Button
                         Button{
-                            
+                            betCheck(hand: points, checkAmount: matchManager.pastBet)
                         }
                     label: {Image("Check")
                             .resizable()
@@ -72,6 +72,7 @@ struct ContentView: View {
                         //Bet Button
                         Button{
                             betPot()
+                            matchManager.pastBet = betAmount
                         }
                     label: {Image("Bet")
                             .resizable()
@@ -195,6 +196,16 @@ struct ContentView: View {
         matchManager.currentPot += betAmount
         betAmount = 0
         potChecker()
+    }
+    func betCheck(hand: Int, checkAmount: Int) {
+        var check: Int
+        check = hand - checkAmount
+        if check >= 0
+        {
+            points = hand - checkAmount
+            betAmount += checkAmount
+            potChecker()
+        }
     }
     
 }
