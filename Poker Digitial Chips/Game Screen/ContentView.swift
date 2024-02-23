@@ -71,7 +71,13 @@ struct ContentView: View {
                     }
                         //Bet Button
                         Button{
-                            betPot()
+                            if betAmount > matchManager.pastBet {
+                                betPot()
+                            }
+                            else {
+                                betAmount = 0
+                            }
+                            
                         }
                     label: {Image("Bet")
                             .resizable()
@@ -207,11 +213,14 @@ struct ContentView: View {
     func betPot() {
         matchManager.currentPot += betAmount
         matchManager.pastBet = betAmount
-        print(matchManager.pastBet)
         betAmount = 0
         potChecker()
     }
     
+    //Fold Function
+    func berFold() {
+        
+    }
 }
 
 
