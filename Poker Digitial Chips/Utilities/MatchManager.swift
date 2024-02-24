@@ -15,8 +15,6 @@ class MatchManager: ObservableObject {
     @Published var currentlyBetting = false
     @Published var players : [String] = []
     @Published var currentTurn = ""
-    @Published var bigBlind = ""
-    @Published var smallBlind = ""
     //Possible Dealer Variable
     
     @Published var currentPot = 0
