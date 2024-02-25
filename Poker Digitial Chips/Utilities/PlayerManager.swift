@@ -11,9 +11,6 @@ class PlayerManager: ObservableObject {
     @Published var playerName = ""
     @Published var playerCash = 500
     @Published var bankrupt = false
-    if playerCash = 0 {
-        bankrupt = true
-    }
     
     @Published var currentBet = 0
     @Published var bigBlind = false

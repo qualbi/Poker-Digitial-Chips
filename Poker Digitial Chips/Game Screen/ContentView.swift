@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var matchManager: MatchManager
+    
     @State var points:Int = 500
     @State var betAmount:Int = 0
     @State var pot:String = "pot 0"
@@ -201,24 +202,28 @@ struct ContentView: View {
     func betCheck(hand: Int, checkAmount: Int) {
         var check: Int
         check = hand - checkAmount
-        if check >= 0
-        {
-            points = check
-            matchManager.currentPot += checkAmount
-            potChecker()
+        if checkAmount > 0 {
+            if check >= 0
+            {
+                points = check
+                matchManager.currentPot += checkAmount
+                potChecker()
+            }
         }
     }
     
     //Bet Function
     func betPot() {
-        matchManager.currentPot += betAmount
-        matchManager.pastBet = betAmount
-        betAmount = 0
-        potChecker()
+        if betAmount > 0 {
+            matchManager.currentPot += betAmount
+            matchManager.pastBet = betAmount
+            betAmount = 0
+            potChecker()
+        }
     }
     
     //Fold Function
-    func berFold() {
+    func betFold() {
         
     }
 }
