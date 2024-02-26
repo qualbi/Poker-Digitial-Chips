@@ -13,7 +13,7 @@ class MatchManager: ObservableObject {
     @Published var isGameOver = false
     
     @Published var currentlyBetting = false
-    @Published var players : [String] = []
+    @Published var players = [PlayerManager]()
     @Published var currentTurn = ""
     @Published var deal = ""
     

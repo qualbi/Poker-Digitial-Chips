@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct StartView: View {
     @State private var gameType: GameType = .undetermined
@@ -65,6 +66,7 @@ struct StartView: View {
                     Button ("Play") {
                         focus = false
                         startGame.toggle()
+                        matchManager.players.reserveCapacity(playerCount)
                     }
                     .buttonStyle(.borderedProminent)
                     .disabled(
