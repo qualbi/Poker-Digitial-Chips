@@ -15,4 +15,7 @@ class PlayerManager: ObservableObject {
     @Published var currentBet = 0
     @Published var bigBlind = false
     @Published var smallBlind = false
+    
+    @Published var isTurn = false
+    @Published var forfeit = false
 }

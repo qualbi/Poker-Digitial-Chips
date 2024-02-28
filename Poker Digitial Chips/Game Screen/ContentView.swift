@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var matchManager: MatchManager
+    @State var currentTurn = 0
     
     @State var points:Int = 500
     @State var betAmount:Int = 0
@@ -31,7 +32,7 @@ struct ContentView: View {
                     }
                 label: {Image("Title")
                         .resizable()
-                        .frame(width:120, height: 120)
+                        .frame(width:100, height: 100)
                         .alert(isPresented: $reset) {
                             Alert(title: Text("Do you want to leave the game?"), primaryButton: .default(Text ("Leave")){
                                 matchManager.currentPot = 0
@@ -87,7 +88,7 @@ struct ContentView: View {
                     }
                         //Fold Button
                         Button{
-                            
+                            betFold()
                         }
                     label: {Image("Fold")
                             .resizable()
@@ -224,7 +225,12 @@ struct ContentView: View {
     
     //Fold Function
     func betFold() {
-        
+        if (matchManager.players[currentTurn].isTurn)
+        {
+            matchManager.players[currentTurn].forfeit = true
+            currentTurn +=  1
+            print(currentTurn)
+        }
     }
 }
 
