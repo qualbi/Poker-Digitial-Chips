@@ -14,6 +14,7 @@
 		4D7D65942B773146009EBA28 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7D65932B773146009EBA28 /* ViewModifiers.swift */; };
 		4D8D83582B64B76D0080E9AF /* Poker_Digitial_ChipsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D83572B64B76D0080E9AF /* Poker_Digitial_ChipsApp.swift */; };
 		4D8D835C2B64B76E0080E9AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D835B2B64B76E0080E9AF /* Assets.xcassets */; };
+		4D8ECA952B904308004A6779 /* Authenicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8ECA942B904308004A6779 /* Authenicate.swift */; };
 		4DB8FB352B70984E00F1F223 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8FB342B70984E00F1F223 /* StartView.swift */; };
 		4DCAA30D2B83183E00B72D13 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCAA30C2B83183E00B72D13 /* Misc.swift */; };
 		4DCAA30F2B8319BC00B72D13 /* MatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCAA30E2B8319BC00B72D13 /* MatchManager.swift */; };
@@ -28,6 +29,7 @@
 		4D8D83542B64B76D0080E9AF /* Poker Digitial Chips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Poker Digitial Chips.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D8D83572B64B76D0080E9AF /* Poker_Digitial_ChipsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poker_Digitial_ChipsApp.swift; sourceTree = "<group>"; };
 		4D8D835B2B64B76E0080E9AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4D8ECA942B904308004A6779 /* Authenicate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenicate.swift; sourceTree = "<group>"; };
 		4DB8FB342B70984E00F1F223 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		4DCAA30C2B83183E00B72D13 /* Misc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
 		4DCAA30E2B8319BC00B72D13 /* MatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchManager.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				4D8D83652B64E3FA0080E9AF /* Poker Assets */,
 				4D8D83572B64B76D0080E9AF /* Poker_Digitial_ChipsApp.swift */,
 				4DB8FB342B70984E00F1F223 /* StartView.swift */,
+				4D8ECA942B904308004A6779 /* Authenicate.swift */,
 				4D5686EB2B7DCF0B000CD258 /* Game Screen */,
 				4D7D65902B773106009EBA28 /* Utilities */,
 				4D7D65882B731DCE009EBA28 /* Model */,
@@ -187,6 +190,7 @@
 				4D7D65922B773113009EBA28 /* ContentView.swift in Sources */,
 				4D05A8F12B89ADB9008CEA4A /* PlayerManager.swift in Sources */,
 				4D8D83582B64B76D0080E9AF /* Poker_Digitial_ChipsApp.swift in Sources */,
+				4D8ECA952B904308004A6779 /* Authenicate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +319,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Poker Digitial Chips/Preview Content\"";
+				DEVELOPMENT_TEAM = 33MC76S4LZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -343,6 +348,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Poker Digitial Chips/Preview Content\"";
+				DEVELOPMENT_TEAM = 33MC76S4LZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

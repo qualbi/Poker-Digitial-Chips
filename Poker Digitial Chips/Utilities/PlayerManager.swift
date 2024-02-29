@@ -12,6 +12,7 @@ class PlayerManager: ObservableObject {
     @Published var playerCash = 500
     @Published var bankrupt = false
     
+    
     @Published var currentBet = 0
     @Published var bigBlind = false
     @Published var smallBlind = false

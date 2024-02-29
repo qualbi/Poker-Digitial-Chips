@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import GameKit
 
 class MatchManager: ObservableObject {
     @Published var authenicationState = PlayerAuthState.authenticating
@@ -13,10 +14,62 @@ class MatchManager: ObservableObject {
     @Published var isGameOver = false
     
     @Published var currentlyBetting = false
-    @Published var players = [PlayerManager]()
+    @Published var players = [Player]()
     @Published var currentTurn = ""
     @Published var deal = ""
     
     @Published var currentPot = 0
     @Published var pastBet = 0
+    
+    var match: GKMatch?
+    var otherPlayer: GKPlayer?
+    var localPlayer = GKLocalPlayer.local
+    
+    var playerUUIDKey = UUID().uuidString
+    
+    var rootViewController: UIViewController? {
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        return windowScene?.windows.first?.rootViewController
+    }
+    
+    func authenicateUser() {
+        GKLocalPlayer.local.authenticateHandler = { [self] vc, e in
+            if let viewController = vc {
+                rootViewController?.present(viewController, animated: true)
+            }
+            
+            if let error = e {
+                authenicationState = .error
+                print(error.localizedDescription)
+                
+                return
+            }
+            
+            if localPlayer.isAuthenticated {
+                if localPlayer.isMultiplayerGamingRestricted {
+                    authenicationState = .restricted
+                } else {
+                    authenicationState = .authenicated
+                }
+            } else {
+                authenicationState = .unauthenicated
+            }
+            
+        }
+    }
+}
+
+
+struct Player {
+    var playerName = ""
+    var playerCash = 500
+    var bankrupt = false
+    
+    
+    var currentBet = 0
+    var bigBlind = false
+    var smallBlind = false
+    
+    var isTurn = false
+    var forfeit = false
 }

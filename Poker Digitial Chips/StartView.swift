@@ -14,7 +14,9 @@ struct StartView: View {
     @State private var playerCount = 0
     @FocusState private var focus: Bool
     @State private var startGame = false
-    @ObservedObject var matchManager: MatchManager
+    @StateObject var matchManager = MatchManager()
+    
+    
     var body: some View {
         ZStack{
             //Logo and App Title
