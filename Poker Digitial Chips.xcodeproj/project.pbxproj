@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D05A8F12B89ADB9008CEA4A /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05A8F02B89ADB9008CEA4A /* PlayerManager.swift */; };
+		4D169FCB2B943A340001E555 /* MatchManager+GKMatchmakerViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D169FCA2B943A340001E555 /* MatchManager+GKMatchmakerViewControllerDelegate.swift */; };
 		4D7D658A2B731DF4009EBA28 /* GameModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7D65892B731DF4009EBA28 /* GameModels.swift */; };
 		4D7D658E2B75EADA009EBA28 /* Preview Content in Resources */ = {isa = PBXBuildFile; fileRef = 4D7D658D2B75EADA009EBA28 /* Preview Content */; };
 		4D7D65922B773113009EBA28 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7D65912B773106009EBA28 /* ContentView.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		4D05A8F02B89ADB9008CEA4A /* PlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerManager.swift; sourceTree = "<group>"; };
+		4D169FCA2B943A340001E555 /* MatchManager+GKMatchmakerViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchManager+GKMatchmakerViewControllerDelegate.swift"; sourceTree = "<group>"; };
 		4D7D65892B731DF4009EBA28 /* GameModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModels.swift; sourceTree = "<group>"; };
 		4D7D658D2B75EADA009EBA28 /* Preview Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Preview Content"; sourceTree = "<group>"; };
 		4D7D65912B773106009EBA28 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 		4D8D834B2B64B76D0080E9AF = {
 			isa = PBXGroup;
 			children = (
+				4D169FCA2B943A340001E555 /* MatchManager+GKMatchmakerViewControllerDelegate.swift */,
 				4D8D83562B64B76D0080E9AF /* Poker Digitial Chips */,
 				4D8D83552B64B76D0080E9AF /* Products */,
 			);
@@ -190,6 +193,7 @@
 				4D7D65922B773113009EBA28 /* ContentView.swift in Sources */,
 				4D05A8F12B89ADB9008CEA4A /* PlayerManager.swift in Sources */,
 				4D8D83582B64B76D0080E9AF /* Poker_Digitial_ChipsApp.swift in Sources */,
+				4D169FCB2B943A340001E555 /* MatchManager+GKMatchmakerViewControllerDelegate.swift in Sources */,
 				4D8ECA952B904308004A6779 /* Authenicate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

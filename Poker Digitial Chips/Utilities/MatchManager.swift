@@ -64,6 +64,9 @@ class MatchManager: ObservableObject {
         request.maxPlayers = 10
         
         let matchmakingVC = GKMatchmakerViewController(matchRequest: request)
+        matchmakingVC?.matchmakerDelegate = self
+        
+        rootViewController?.present(matchmakingVC, animated: true)
     }
 }
 
