@@ -8,7 +8,7 @@
 import Foundation
 import GameKit
 
-class MatchManager: ObservableObject {
+class MatchManager: NSObject, ObservableObject {
     @Published var authenicationState = PlayerAuthState.authenticating
     @Published var inGame = false
     @Published var isGameOver = false
@@ -66,7 +66,12 @@ class MatchManager: ObservableObject {
         let matchmakingVC = GKMatchmakerViewController(matchRequest: request)
         matchmakingVC?.matchmakerDelegate = self
         
-        rootViewController?.present(matchmakingVC, animated: true)
+        rootViewController?.present(matchmakingVC!, animated: true)
+    }
+    
+    func startGame(newMatch: GKMatch) {
+        match = newMatch
+        
     }
 }
 
@@ -74,8 +79,6 @@ class MatchManager: ObservableObject {
 struct Player {
     var playerName = ""
     var playerCash = 500
-    var bankrupt = false
-    
     
     var currentBet = 0
     var bigBlind = false

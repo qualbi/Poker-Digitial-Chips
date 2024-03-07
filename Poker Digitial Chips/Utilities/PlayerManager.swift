@@ -8,15 +8,11 @@
 import Foundation
 
 class PlayerManager: ObservableObject {
-    @Published var playerName = ""
-    @Published var playerCash = 500
-    @Published var bankrupt = false
+    var playerName = ""
+    var currentBet = 0
     
+    var bigBlind = false
+    var smallBlind = false
     
-    @Published var currentBet = 0
-    @Published var bigBlind = false
-    @Published var smallBlind = false
-    
-    @Published var isTurn = false
-    @Published var forfeit = false
+    var forfeit = false
 }

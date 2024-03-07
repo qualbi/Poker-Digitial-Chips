@@ -67,6 +67,7 @@
 		4D7D65902B773106009EBA28 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				4D169FCA2B943A340001E555 /* MatchManager+GKMatchmakerViewControllerDelegate.swift */,
 				4D7D65932B773146009EBA28 /* ViewModifiers.swift */,
 				4DCAA30C2B83183E00B72D13 /* Misc.swift */,
 				4DCAA30E2B8319BC00B72D13 /* MatchManager.swift */,
@@ -78,7 +79,6 @@
 		4D8D834B2B64B76D0080E9AF = {
 			isa = PBXGroup;
 			children = (
-				4D169FCA2B943A340001E555 /* MatchManager+GKMatchmakerViewControllerDelegate.swift */,
 				4D8D83562B64B76D0080E9AF /* Poker Digitial Chips */,
 				4D8D83552B64B76D0080E9AF /* Products */,
 			);
