@@ -228,7 +228,7 @@ struct ContentView: View {
         if (matchManager.players[currentTurn].isTurn)
         {
             matchManager.players[currentTurn].forfeit = true
-            currentTurn +=  1
+            //currentTurn +=  1
             print(currentTurn)
         }
     }

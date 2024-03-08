@@ -71,7 +71,11 @@ class MatchManager: NSObject, ObservableObject {
     
     func startGame(newMatch: GKMatch) {
         match = newMatch
+        match?.delegate = self
+        otherPlayer = match?.players.first
+        currentPot = 0
         
+        sendString("began:\(playerUUIDKey)")
     }
 }
 
