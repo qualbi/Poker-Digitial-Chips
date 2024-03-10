@@ -230,6 +230,7 @@ struct ContentView: View {
             matchManager.players[currentTurn].forfeit = true
             //currentTurn +=  1
             print(currentTurn)
+            print("Player Folded")
         }
     }
 }
