@@ -26,7 +26,7 @@ extension MatchManager: GKMatchDelegate {
         sendData(data, mode: .reliable)
     }
     
-    func sendBets(_ bets: Int) {
+    func sendBets(_ bets: Int?) {
         guard let encodedBet = bets
         else {return}
     }
