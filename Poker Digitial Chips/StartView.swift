@@ -67,8 +67,9 @@ struct StartView: View {
                 if gameType != .peer{
                     Button ("Play") {
                         focus = false
-                        startGame.toggle()
                         matchManager.players.reserveCapacity(playerCount)
+                        startGame.toggle()
+                        matchManager.startMatchmaking()
                     }
                     .buttonStyle(.borderedProminent)
                     .disabled(

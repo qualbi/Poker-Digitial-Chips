@@ -77,6 +77,28 @@ class MatchManager: NSObject, ObservableObject {
         
         sendString("began:\(playerUUIDKey)")
     }
+    
+    func receivedString(_ message: String) {
+        let messageSplit = message.split(separator: ":")
+        guard let messagePrefix = messageSplit.first else {return}
+        
+        let parameter = String(messageSplit.last ?? "")
+        
+        switch messagePrefix {
+        case "began":
+            if playerUUIDKey == parameter {
+                playerUUIDKey == UUID().uuidString
+                sendString("began:\(playerUUIDKey)")
+                break
+            }
+            
+            currentlyBetting = playerUUIDKey < parameter
+            inGame = true
+            
+        default:
+            break
+        }
+    }
 }
 
 

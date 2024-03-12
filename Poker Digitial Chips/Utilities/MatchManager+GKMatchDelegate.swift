@@ -13,8 +13,9 @@ extension MatchManager: GKMatchDelegate {
     func match(_ match: GKMatch, didReceive data: Data, fromRemotePlayer player: GKPlayer) {
         let content = String(decoding: data, as: UTF8.self)
         
-        if content.starts(with: "strData") {
-            
+        if content.starts(with: "strData:") {
+            let message = content.replacing("StrData:", with: "")
+            receivedString(message)
         } else {
             
         }
