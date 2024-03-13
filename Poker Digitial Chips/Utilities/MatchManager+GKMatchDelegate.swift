@@ -24,12 +24,12 @@ extension MatchManager: GKMatchDelegate {
     func sendString(_ message: String) {
         guard let encoded = "strData:\(message)".data(using: .utf8)
         else {return}
-        sendData(data, mode: .reliable)
+        sendData(encoded, mode: .reliable)
     }
     
-    func sendBets(_ bets: Int?) {
-        guard let encodedBet = bets
-        else {return}
+    func sendBets(_ bets: Int) {
+        let encodedBet = withUnsafeBytes(of: bets) { Data($0) }
+        sendData(encodedBet, mode: .reliable)
     }
     
     func sendData(_ data: Data, mode: GKMatch.SendDataMode) {
@@ -40,7 +40,7 @@ extension MatchManager: GKMatchDelegate {
         }
     }
     
-    func match(_ match: GKMatch, player: GKPlayer, didChange state: GKPlayerConnectionState) {
+    /*func match(_ match: GKMatch, player: GKPlayer, didChange state: GKPlayerConnectionState) {
         <#code#>
-    }
+    }*/
 }

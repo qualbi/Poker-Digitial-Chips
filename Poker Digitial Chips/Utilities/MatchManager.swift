@@ -87,7 +87,7 @@ class MatchManager: NSObject, ObservableObject {
         switch messagePrefix {
         case "began":
             if playerUUIDKey == parameter {
-                playerUUIDKey == UUID().uuidString
+                playerUUIDKey = UUID().uuidString
                 sendString("began:\(playerUUIDKey)")
                 break
             }
