@@ -9,10 +9,12 @@ import Foundation
 
 class PlayerManager: ObservableObject {
     var playerName = ""
+    var playerUUID = ""
     var currentBet = 0
     
     var bigBlind = false
     var smallBlind = false
     
+    var isTurn = false
     var forfeit = false
 }

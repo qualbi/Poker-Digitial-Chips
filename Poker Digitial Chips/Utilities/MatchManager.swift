@@ -14,7 +14,7 @@ class MatchManager: NSObject, ObservableObject {
     @Published var isGameOver = false
     
     @Published var currentlyBetting = false
-    @Published var players = [Player]()
+    @Published var players = [PlayerManager]()
     @Published var currentTurn = ""
     @Published var deal = ""
     
@@ -98,6 +98,13 @@ class MatchManager: NSObject, ObservableObject {
         default:
             break
         }
+    }
+    
+    func receivedBets(_ bets: Int) {
+        if bets > 0 {
+            currentPot += bets
+            sendBets(currentPot)
+        } else {return}
     }
 }
 
