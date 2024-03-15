@@ -101,14 +101,16 @@ class MatchManager: NSObject, ObservableObject {
     }
     
     func receivedBets(_ bets: Int) {
-        if bets > 0 {
+        if bets > 0 || pastBet >= bets{
             currentPot += bets
+            pastBet = bets
             sendBets(currentPot)
         } else {return}
     }
 }
 
 
+/*
 struct Player {
     var playerName = ""
     var playerCash = 500
@@ -119,4 +121,6 @@ struct Player {
     
     var isTurn = false
     var forfeit = false
+
 }
+*/
