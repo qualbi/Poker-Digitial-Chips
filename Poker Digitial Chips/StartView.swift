@@ -43,6 +43,7 @@ struct StartView: View {
                 .padding()
                 .background(RoundedRectangle(cornerRadius: 10, style: .continuous).stroke(lineWidth: 5).foregroundColor(.white))
                 .accentColor(.white)
+                
                 Text(gameType.description)
                     .foregroundColor(.white)
                     .padding()

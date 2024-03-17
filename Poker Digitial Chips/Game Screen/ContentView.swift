@@ -26,7 +26,7 @@ struct ContentView: View {
             VStack{
                 
                 HStack{
-                    //Reser Button
+                    //Reset Button
                     Button{
                         reset = true
                     }
@@ -170,6 +170,8 @@ struct ContentView: View {
     }
     //Changes display on the pot based on its amount
     func potChecker() {
+        var potValue = matchManager.currentPot
+
         if matchManager.currentPot >= 1000 {
             pot = "pot 4"
         }
@@ -209,8 +211,11 @@ struct ContentView: View {
                 points = check
                 matchManager.currentPot += checkAmount
                 potChecker()
+                
+                matchManager.receivedBets(matchManager.currentPot)
             }
         }
+        else {print("error")}
     }
     
     //Bet Function
@@ -220,6 +225,8 @@ struct ContentView: View {
             matchManager.pastBet = betAmount
             betAmount = 0
             potChecker()
+            
+            matchManager.receivedBets(matchManager.currentPot)
         }
     }
     
@@ -228,7 +235,7 @@ struct ContentView: View {
         if (matchManager.players[currentTurn].isTurn)
         {
             matchManager.players[currentTurn].forfeit = true
-            //currentTurn +=  1
+            currentTurn +=  1
             print(currentTurn)
             print("Player Folded")
         }
