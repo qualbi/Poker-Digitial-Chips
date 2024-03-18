@@ -78,6 +78,26 @@ class MatchManager: NSObject, ObservableObject {
         sendString("began:\(playerUUIDKey)")
     }
     
+    func gameOver() {
+        isGameOver = true
+        match?.disconnect()
+    }
+    
+    func resetGame() {
+        DispatchQueue.main.async { [self] in
+            isGameOver = false
+            inGame = false
+            currentPot = 0
+            players.removeAll()
+            pastBet = 0
+        }
+        
+        match?.delegate = nil
+        match = nil
+        otherPlayer = nil
+        playerUUIDKey = UUID().uuidString
+    }
+    
     func receivedString(_ message: String) {
         let messageSplit = message.split(separator: ":")
         guard let messagePrefix = messageSplit.first else {return}
@@ -113,6 +133,7 @@ class PlayerManager: ObservableObject {
     var playerName = ""
     var playerUUID = ""
     var currentBet = 0
+    var cash = 500
     
     var bigBlind = false
     var smallBlind = false

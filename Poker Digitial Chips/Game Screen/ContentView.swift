@@ -28,7 +28,7 @@ struct ContentView: View {
                 HStack{
                     //Reset Button
                     Button{
-                        reset = true
+                        matchManager.resetGame()
                     }
                 label: {Image("Title")
                         .resizable()
@@ -170,7 +170,6 @@ struct ContentView: View {
     }
     //Changes display on the pot based on its amount
     func potChecker() {
-        var potValue = matchManager.currentPot
 
         if matchManager.currentPot >= 1000 {
             pot = "pot 4"
