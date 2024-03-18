@@ -28,18 +28,15 @@ struct ContentView: View {
                 HStack{
                     //Reset Button
                     Button{
-                        matchManager.resetGame()
+                        reset = true
                     }
                 label: {Image("Title")
                         .resizable()
                         .frame(width:100, height: 100)
                         .alert(isPresented: $reset) {
                             Alert(title: Text("Do you want to leave the game?"), primaryButton: .default(Text ("Leave")){
-                                matchManager.currentPot = 0
-                                points = 500
-                                betAmount = 0
-                                potChecker()
-                                dismiss()
+                                matchManager.match?.disconnect()
+                                matchManager.resetGame()
                                 print("Game Reset")
                             }, secondaryButton: .cancel())
                         }
