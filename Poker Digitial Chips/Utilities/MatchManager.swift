@@ -18,8 +18,11 @@ class MatchManager: NSObject, ObservableObject {
     @Published var currentTurn = ""
     @Published var deal = ""
     
+    @Published var pot = "pot 0"
+    
     @Published var currentPot = 0
     @Published var pastBet = 0
+    @Published var turn = 0
     
     var match: GKMatch?
     var otherPlayer: GKPlayer?
@@ -127,6 +130,31 @@ class MatchManager: NSObject, ObservableObject {
             sendBets(currentPot)
         } else {return}
     }
+    
+    func compareTo(party: String, ID: String) -> Bool{
+        if party == ID{
+            return true
+        }
+        return false
+    }
+    
+    func rotate() {
+        var size = players.count
+        if (turn < size) {
+            turn += 1
+        } else {
+            turn = 0
+        }
+    }
+    
+    func placeChecker() -> Bool {
+        var size = players.count
+        var last = size - 1
+        if (turn == last) {
+            return true
+        }
+        return false
+    }
 }
 
 class PlayerManager: ObservableObject {
@@ -141,6 +169,15 @@ class PlayerManager: ObservableObject {
     var roundWinner = false
     var isTurn = false
     var forfeit = false
+    
+    
+    func playerID() -> String {
+        return self.playerUUID
+    }
+    
+    func playerCash() -> Int {
+        return self.cash
+    }
 }
 
 /*

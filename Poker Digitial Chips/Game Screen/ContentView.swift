@@ -50,7 +50,7 @@ struct ContentView: View {
                     .foregroundColor(Color.white)
                 
                 //Pot Image
-                Image(pot)
+                Image(matchManager.pot)
                     .resizable()
                     .frame(width: 170, height: 170)
                 
@@ -169,19 +169,19 @@ struct ContentView: View {
     func potChecker() {
 
         if matchManager.currentPot >= 1000 {
-            pot = "pot 4"
+            matchManager.pot = "pot 4"
         }
         else if matchManager.currentPot > 500{
-            pot = "pot 3"
+            matchManager.pot = "pot 3"
         }
         else if matchManager.currentPot > 250{
-            pot = "pot 2"
+            matchManager.pot = "pot 2"
         }
         else if matchManager.currentPot > 0{
-            pot = "pot 1"
+            matchManager.pot = "pot 1"
         }
         else if matchManager.currentPot == 0{
-            pot = "pot 0"
+            matchManager.pot = "pot 0"
         }
     }
     
@@ -230,8 +230,10 @@ struct ContentView: View {
     func betFold() {
         if (matchManager.players[currentTurn].isTurn)
         {
-            matchManager.players[currentTurn].forfeit = true
-            currentTurn +=  1
+            if (matchManager.placeChecker()) {
+                matchManager.players[currentTurn].forfeit = true
+                currentTurn +=  1
+            }
             print(currentTurn)
             print("Player Folded")
         }
