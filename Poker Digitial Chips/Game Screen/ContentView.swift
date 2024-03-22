@@ -70,12 +70,7 @@ struct ContentView: View {
                     }
                         //Bet Button
                         Button{
-                            if betAmount > matchManager.pastBet {
-                                betPot()
-                            }
-                            else {
-                                betAmount = 0
-                            }
+                            betPot()
                             
                         }
                     label: {Image("Bet")
@@ -205,10 +200,8 @@ struct ContentView: View {
             if check >= 0
             {
                 points = check
-                matchManager.currentPot += checkAmount
+                matchManager.receivedBets(checkAmount)
                 potChecker()
-                
-                matchManager.receivedBets(matchManager.currentPot)
             }
         }
         else {print("error")}
@@ -216,13 +209,14 @@ struct ContentView: View {
     
     //Bet Function
     func betPot() {
-        if betAmount > 0 {
-            matchManager.currentPot += betAmount
-            matchManager.pastBet = betAmount
-            betAmount = 0
+        if betAmount > 0 && betAmount >= matchManager.pastBet {
+            matchManager.receivedBets(betAmount)
             potChecker()
-            
-            matchManager.receivedBets(matchManager.currentPot)
+            betAmount = 0
+        }
+        else {
+            points += betAmount
+            betAmount = 0
         }
     }
     
