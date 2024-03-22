@@ -15,6 +15,7 @@ class MatchManager: NSObject, ObservableObject {
     
     @Published var currentlyBetting = false
     @Published var players = [PlayerManager]()
+    @Published var playerCash = [String: Int]()
     @Published var currentTurn = ""
     @Published var deal = ""
     

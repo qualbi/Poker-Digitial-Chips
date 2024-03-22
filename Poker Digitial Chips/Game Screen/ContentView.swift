@@ -230,10 +230,8 @@ struct ContentView: View {
     func betFold() {
         if (matchManager.players[currentTurn].isTurn)
         {
-            if (matchManager.placeChecker()) {
-                matchManager.players[currentTurn].forfeit = true
-                currentTurn +=  1
-            }
+            matchManager.players.remove(at: matchManager.turn)
+            matchManager.rotate()
             print(currentTurn)
             print("Player Folded")
         }
